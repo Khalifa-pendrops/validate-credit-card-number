@@ -9,12 +9,12 @@ const validateCardNumber = (number) => {
   const cardNumber = number.toString().replace(/\s+/g, "");
 
   if (!/^\d+$/.test(cardNumber)) {
-    return "Card number must be made of digits only";
+    return "⛔ Card number must be made of digits only";
   }
 
   let typeOfCard = getTypeOfCard(cardNumber);
   if (!typeOfCard) {
-    return "Card not supported!";
+    return "⛔ Card not supported!";
   }
 
   if (!getCardLength(cardNumber, typeOfCard)) {
@@ -32,8 +32,6 @@ const validateCardNumber = (number) => {
 };
 
 const getTypeOfCard = (cardNumber) => {
-  // let firstTwoDigits = parseInt(cardNumber.substring(0, 2), 10);
-  // let firstFourDigits = parseInt(cardNumber.substring(0, 4), 10);
 
   if (/^4/.test(cardNumber)) {
     return "Visa";
@@ -60,7 +58,7 @@ const confirmCard = (cardNumber) => {
     Mastercard: "16",
   };
   const type = getTypeOfCard(cardNumber);
-  return type ? cardLength[type] : "Sorry, unknown card!";
+  return type ? cardLength[type] : "😞 Sorry, unknown card!";
 };
 
 const getCardLength = (cardNumber, typeOfCard) => {
