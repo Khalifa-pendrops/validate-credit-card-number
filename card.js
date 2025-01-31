@@ -32,8 +32,8 @@ const validateCardNumber = (number) => {
 };
 
 const getTypeOfCard = (cardNumber) => {
-  let firstTwoDigits = parseInt(cardNumber.substring(0, 2), 10);
-  let firstFourDigits = parseInt(cardNumber.substring(0, 4), 10);
+  // let firstTwoDigits = parseInt(cardNumber.substring(0, 2), 10);
+  // let firstFourDigits = parseInt(cardNumber.substring(0, 4), 10);
 
   if (/^4/.test(cardNumber)) {
     return "Visa";
